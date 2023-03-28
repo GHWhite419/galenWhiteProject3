@@ -8,6 +8,11 @@ const BookInfo = () => {
     const [getLanguage, setLanguage] = useState('');
     const [message, setMessage] = useState('');
 
+    useEffect(() => {
+        setMessage('What kind of book can I find you?');
+    }, [])
+
+
     const getFormLang = (e, languageSelect) => {
         e.preventDefault();
         setMessage('Give me a moment to find you a book...');
@@ -22,7 +27,6 @@ const BookInfo = () => {
             }
         })
             .then((resp) => {
-                console.log(resp);
                 const randomNum = Math.floor(Math.random() * resp.data.docs.length);
                 const bookTitle = resp.data.docs[randomNum];
                 setBook(bookTitle);
@@ -30,18 +34,10 @@ const BookInfo = () => {
                     `I found the following book for you, which has a ${languageSelect} translation:`
                 )
             })
-            .catch((error) => {
-                setMessage(
-                    "Oops, I couldn't find a book for you. Try again!"
-                )
+            .catch(() => {
+                setMessage("Oops, I couldn't find a book for you. Try again!");
             })
-        // .then will conditionally display the results on the page, along with a little message.
-        // Add a throw/catch method which will render on the page instead of the above message. 
     }
-
-    // useEffect(() => {
-    // }, [getLanguage]);
-
 
     return (
         <>

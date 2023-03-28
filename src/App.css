@@ -367,6 +367,7 @@ button:active {
   margin: 2rem auto;
   border-radius: 5px;
   border: 5px solid saddlebrown;
+  padding: 0 1.5rem;
 }
 
 @media (max-width: 375px) {
