@@ -15,29 +15,36 @@ const BookInfo = () => {
 
     const getFormLang = (e, languageSelect) => {
         e.preventDefault();
-        setMessage('Give me a moment to find you a book...');
-        setBook('');
-        setLanguage(languageSelect);
-        axios({
-            url: `https://openlibrary.org/search.json?q=language:${getLanguage.toLowerCase().slice(0, 3)}`,
-            method: 'GET',
-            dataResponse: 'json',
-            params: {
-                limit: 30,
-            }
-        })
-            .then((resp) => {
-                const randomNum = Math.floor(Math.random() * resp.data.docs.length);
-                const bookTitle = resp.data.docs[randomNum];
-                setBook(bookTitle);
-                setMessage(
-                    `I found the following book for you, which has a ${languageSelect} translation:`
-                )
+        if (languageSelect === 'Placeholder') {
+            setMessage('Please select a language so I can help find you a book!')
+        }
+        else {
+            setMessage('Give me a moment to find you a book...');
+            setBook('');
+            setLanguage(languageSelect);
+            axios({
+                url: `https://openlibrary.org/search.json?q=language:${getLanguage.toLowerCase().slice(0, 3)}`,
+                method: 'GET',
+                dataResponse: 'json',
+                params: {
+                    limit: 30,
+                }
             })
-            .catch(() => {
-                setMessage("Oops, I couldn't find a book for you. Try again!");
-            })
+                .then((resp) => {
+
+                    const randomNum = Math.floor(Math.random() * resp.data.docs.length);
+                    const bookTitle = resp.data.docs[randomNum];
+                    setBook(bookTitle);
+                    setMessage(
+                        `I found the following book for you, which has a ${languageSelect} translation:`
+                    )
+                })
+                .catch(() => {
+                    setMessage("Oops, I couldn't find a book for you. Try again!");
+                })
+        }
     }
+
 
     return (
         <>
