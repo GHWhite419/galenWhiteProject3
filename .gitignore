@@ -11,6 +11,7 @@
 # production
 /build
 /design
+toDoList.txt
 
 # misc
 .DS_Store

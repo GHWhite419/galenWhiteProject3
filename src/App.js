@@ -4,9 +4,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      {/* Add a main for semantic content */}
-     <BookInfo />
-     {/* BookInfo will be rendered here. */}
+      <main>
+        <h1>Welcome to the foreign language library! What kind of book can I find you?</h1>
+        <BookInfo />
+      </main>
     </div>
   );
 }

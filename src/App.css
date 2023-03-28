@@ -32,7 +32,80 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Custom styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+body {
+  background-image: url(../assets/cafe.jpg);
+  background-position-y: -9rem;
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  color: wheat;
+  font-size: 2.3rem;
+  max-width: 45rem;
+  margin: 1rem auto;
+}
+
+form {
+  background: wheat;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 5px solid saddlebrown;
+  opacity: .9;
+}
+
+form>* {
+  margin: 1rem;
+}
+
+label {
+  font-size: 1.1rem;
+}
+
+select {
+  font-family: inherit;
+  text-align: center;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+option {
+  font-size: 1rem;
+}
+
+button {
+  text-transform: uppercase;
+  background-color: saddlebrown;
+  color: white;
+  padding: .5rem;
+  border: 2px solid saddlebrown;
+}
+
+button:active {
+  background-color: white;
+  color: saddlebrown;
+}
+
+/* button:active {
+  color: firebrick;
+} */
+
+.results {
+  background-color: wheat;
+  opacity: .9;
+  width: 85%;
+  margin: 2rem auto;
+  border-radius: 5px;
+  border: 5px solid saddlebrown;
 }
