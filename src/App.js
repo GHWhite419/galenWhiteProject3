@@ -5,8 +5,10 @@ function App() {
   return (
     <div className="App">
       <main>
-        <h1>Welcome to the foreign language library! What kind of book can I find you?</h1>
-        <BookInfo />
+        <div className="wrapper">
+          <h1>Welcome to the foreign language library! What kind of book can I find you?</h1>
+          <BookInfo />
+        </div>
       </main>
     </div>
   );

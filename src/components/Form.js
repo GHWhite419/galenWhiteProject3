@@ -1,17 +1,16 @@
 import {useState} from 'react';
 
 const Form = (props) => {
-    const [langChoice, setLangChoice] = useState('');
+    const [langChoice, setLangChoice] = useState('Placeholder');
     const handleChoice = (e) => {
         setLangChoice(e.target.value);
     }
 
     return (
-        // Create select form. We will use props to pass the details of the form back to BookInfo. The primary option in the form will be 'language'.
         <form onSubmit={(e) => props.getFormLang(e, langChoice)}>
             <label htmlFor="bookLanguage">Select a language:</label>
             <select name="bookLanguage" id="bookLanguage" value={langChoice} onChange={handleChoice}>
-                <option value="" disabled>Pick one:</option>
+                <option value="Placeholder" disabled>Pick one:</option>
                 <option value="French">French</option>
                 <option value="Spanish">Spanish</option>
                 <option value="German">German</option>
