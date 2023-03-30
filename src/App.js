@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import BookInfo from './components/BookInfo.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div className="wrapper">
+          <h1>Welcome to the Polyglot library!</h1>
+          <BookInfo />
+        </div>
+      </main>
+      <footer>
+        <div className="wrapper">
+          <p>Designed by Galen White 2023</p>
+        </div>
+      </footer>
     </div>
   );
 }
