@@ -9,14 +9,14 @@ const BookInfo = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        setMessage('What kind of book can I find you?');
+        setMessage('Studying a new language? Let me find a book you can practice with!');
     }, [])
 
 
     const getFormLang = (e, languageSelect) => {
         e.preventDefault();
         if (languageSelect === 'Placeholder') {
-            setMessage('Please select a language so I can help find you a book!')
+            setMessage('Please select a language so I can help find you a book!');
         }
         else {
             setMessage('Give me a moment to find you a book...');
