@@ -344,7 +344,7 @@ select {
 
 }
 
-select:focus {
+select:focus-visible {
   border: 2px solid saddlebrown;
   border-radius: 5px;
   outline: none;
@@ -367,7 +367,7 @@ button:active {
   color: saddlebrown;
 }
 
-button:focus {
+button:focus-visible {
   color: wheat;
 }
 
